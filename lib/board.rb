@@ -15,6 +15,7 @@ class Board
       y += 1
       x = 1
     end
+    @id
   end
 
   define_method(:spaces) do
@@ -26,5 +27,12 @@ class Board
       @spaces_array.push(@space_array)
     end
     @spaces_array
+  end
+
+  define_method(:find) do |index|
+    @coordinates = []
+    @coordinates.push(@spaces[index].x())
+    @coordinates.push(@spaces[index].y())
+    @coordinates
   end
 end
